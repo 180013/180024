@@ -18,37 +18,35 @@ Enseguida se enlistan las sintaxis de las operaciones utilizadas para este progr
 pero estas fueron implementadas en el presente código. Si se desea profundizar más en la implementación de estas funciones, consultar https://metacpan.org/pod/Set::Scalar.  
 
 #### Creación de un conjunto
-```
-  $s = Set::Scalar->new;
-  $s = Set::Scalar->new(@members);
-```
+	$s = Set::Scalar -> new;
+	$s = Set::Scalar -> new (@members);
   
 #### Modificación de un conjunto
-```
-  $s->insert(@members); # Inserta un elemento
-  $s->delete(@members);	# Elimina un elemento específico
-  $s->invert(@members);	# Inserta si no lo ha hecho, elimina si los tiene
-  $s->clear;  		# Elimina todos los elementos
-```
+	$s -> insert (@members);	# Inserta un elemento
+	$s -> delete (@members);	# Elimina el elemento dado
+	$s -> invert (@members);	# Inserta si no lo ha hecho, elimina si los tiene
+	$s -> clear;  			# Elimina todos los elementos
+	$t = $s -> copy;		# Copia un conjunto a otro
 
 #### Mostrar o imprimir un conjunto
 	print $s, "\n";
-El formato de visualización de un conjunto son los miembros del conjunto separados por espacios y encerrados entre paréntesis ().  
+El formato de visualización de un conjunto son los miembros del conjunto separados por espacios y encerrados entre paréntesis (), por ejemplo `a b c d e`.  
 
 #### Consulta de un conjunto
-	$s->has($m)        # Retorna "True" si contiene el elemento
-	$s->contains($m)   # Alias para has().
+	$s -> has ($m)        # Retorna "True" si contiene el elemento
+	$s -> contains ($m)   # Alias para has()
 	
-	$s->member($m)     # Retorna el elemento si es que lo con
-	$s->element($m)    # Alias para member().
+	$s -> member ($m)     # Retorna el elemento si es que lo contiene
+	$s -> element ($m)    # Alias para member()
   
-#### Manejo de operacionales de un conjunto
-```
-$u = $s->union($t);			# Unión
-$i = $s->intersection($t);		# Intersección
-$d = $s->difference($t);		# Diferencia
-$e = $s->symmetric_difference($t);	# Diferencia simétrica
-```
+#### Manejo de operacionales de un conjunto  
+	$u = $s -> union ($t);			# Unión
+	$i = $s -> intersection ($t);		# Intersección
+	$d = $s -> difference ($t);		# Diferencia
+	$e = $s -> symmetric_difference ($t);	# Diferencia simétrica
+	$x = $s -> is_subset ($t);		# Subconjunto
+	$y = $s -> is_superset ($t);		# Superconjunto
+
 
 ## Solución de problemas
 Debido a que un conjunto no es un tipo de dato existente en Perl, fue necesario añadir del módulo Set::Scalar, el cual permite realizar operaciones básicas de conjuntos en 
@@ -59,11 +57,17 @@ De acuerdo a la página, la instalación del módulo se realiza copiando y pegan
 Con cpanm:  
 ```
 cpanm Set::Scalar
-```
-Con CPAN shell:
+```  
+Con CPAN shell:  
 ```
 perl -MCPAN -e shell
 install Set::Scalar
-```
+```  
 Si este método no funciona, simplemente se debe de copiar la carpeta Set (ubicada en la carpeta lib) del archivo descargado, y pegarla en la dirección `C:\Perl64\lib`.
 Se debe de tomar en cuenta que esta opción personalmente me funcionó con la versión Perl Strawberry.
+
+
+## Problemas y soluciones al programar  
+Hablando en un aspecto más estético, el comando `print` no imprime un salto de línea al final de cada instrucción, por lo que se procedió a añadir una característica propia
+de Perl, la cual ayuda a que cada línea tenga su propio salto, sin tener que usar `\n`.  
+	use feature "say";              #  Refiere a una característica de Perl que imprime un salto de línea automático al final de la instrucción  
