@@ -8,7 +8,7 @@
  #  Matrícula:		180024
  #
  #  Descripción:       Programa para realizar diferentes operaciones de
- #                              conjuntos como en matemáticas.
+ #                     conjuntos, justo como en matemáticas.
  #
  #****************************************************************************
 
