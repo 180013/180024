@@ -68,6 +68,18 @@ Se debe de tomar en cuenta que esta opción personalmente me funcionó con la ve
 
 
 ## Problemas y soluciones al programar  
+Debido a que Perl no despliega como tal el resultado "True" o "False" en una operación booleana, se anadió una función en la que si el resultado es 1, se imprime que 
+la declaración es verdadera; si no, se imprime que es falsa.
+
+```
+$result = $A -> has ( 1 );
+	if ($result == 1) {
+	        say "True";
+	} else {say "False";}
+```
+
 Hablando en un aspecto más estético, el comando `print` no imprime un salto de línea al final de cada instrucción, por lo que se procedió a añadir una característica propia
 de Perl, la cual ayuda a que cada línea tenga su propio salto, sin tener que usar `\n`.  
-	use feature "say";              #  Refiere a una característica de Perl que imprime un salto de línea automático al final de la instrucción  
+```
+use feature "say";	#  Característica de Perl que imprime un salto de línea automático al final de la instrucción
+```
