@@ -4,7 +4,7 @@
  #  Nombre:		Julieta Rodríguez Espiricueta
  #  Carrera:		Ingeniería en Tecnologías de la Información (ITI)
  #  Profesor:		Juan Carlos González Ibarra
- #  Institución:		Universidad Politécnica de San Luis Potosí
+ #  Institución:	Universidad Politécnica de San Luis Potosí
  #  Matrícula:		180024
  #
  #  Descripción:       Programa para realizar diferentes operaciones de
@@ -43,8 +43,8 @@ sub pertenencia {
 	
     # 1 está en A
 	$result = $A -> has ( 1 );      #  La función "has" también puede
-	if ($result == 1) {                  #  escribirse como "contains".
-	        say "True";
+	if ($result == 1) {             #  escribirse como "contains".
+		say "True";
 	} else {say "False";}
     
     # 1 no está en A
@@ -69,17 +69,17 @@ sub pertenencia {
 # %%
 # Convertir a un conjunto
 sub transformarConj {
-        my @A = ( 1, 2, 3 );                                            #  Se define una lista
+        my @A = ( 1, 2, 3 );                          #  Se define una lista
 	my $conjuntoA = Set::Scalar -> new ( @A );    #  Se transforma a un conjunto
-        say "El conjunto A es: $conjuntoA";                  #  Se imprime el resultado
+        say "El conjunto A es: $conjuntoA";           #  Se imprime el resultado
         
-        my @B = ( 1, 2, 3, 4, 5 );                                    #  Se define un array
+        my @B = ( 1, 2, 3, 4, 5 );                    #  Se define un array
 	my $conjuntoB = Set::Scalar -> new ( @B );    #  Se transforma a un conjunto
-        say "El conjunto B es: $conjuntoB";                  #  Se imprime el resultado
+        say "El conjunto B es: $conjuntoB";           #  Se imprime el resultado
         
-        my $C = 'Hola Mundo';                                       #  Se define una cadena
+        my $C = 'Hola Mundo';                           #  Se define una cadena
 	my $conjuntoC = Set::Scalar -> new ( $C );      #  Se transforma en un conjunto
-        say "El conjunto C es: $conjuntoC";                  #  Se imprime en el resultado
+        say "El conjunto C es: $conjuntoC";             #  Se imprime en el resultado
 }
 
 # %%
@@ -159,7 +159,7 @@ sub simetrica {
         my $B = Set::Scalar -> new ( 3, 4, 5, 6, 7 );
         my $C = Set::Scalar -> new ( );
         
-        my $S = $A % $B;                                       #  Variable que guarda el resultado de la diferencia simétrica
+        my $S = $A % $B;                            #  Variable que guarda el resultado de la diferencia simétrica
         say "La diferencia simetrica = $S";
         $S = $A -> symmetric_difference ( $B );     # Diferencia simétrica de A y B
         say "La diferencia simetrica = $S";
@@ -180,8 +180,8 @@ sub subconjunto {
      # A es subconjunto de B
         my $subConj = $A -> is_subset ( $B );     #  Variable que guarda el resultado del subconjunto
         print "El subconjunto = ";
-        if ($subConj == 1) {                                    #  Se retoma la estructura condicional para
-	        say "True";                                          #  imprimir un resultado "True" o "False"
+        if ($subConj == 1) {                      #  Se retoma la estructura condicional para
+	        say "True";                       #  imprimir un resultado "True" o "False"
 	} else {say "False";}
 	
      # B es subconjunto de A
@@ -201,8 +201,8 @@ sub superconjunto {
      # B es superconjunto de A
         my $superConj = $B -> is_superset ( $A );       #  Variable que guarda el resultado del superconjunto
         print "El superconjunto = ";
-        if ($superConj == 1) {                                          #  Se retoma la estructura condicional para
-	        say "True";                                                   #  imprimir un resultado "True" o "False"
+        if ($superConj == 1) {                          #  Se retoma la estructura condicional para
+	        say "True";                             #  imprimir un resultado "True" o "False"
 	} else {say "False";}
 	
      # A es superconjunto de B
@@ -251,4 +251,4 @@ say "\n.:Subconjunto:.";
 say "\n.:Superconjunto:.";
 &superconjunto;
 
-say "";         #  Salto final de línea
+say "";  #  Salto final de línea
