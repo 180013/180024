@@ -4,11 +4,11 @@
  #  Nombre:		Julieta Rodríguez Espiricueta
  #  Carrera:		Ingeniería en Tecnologías de la Información (ITI)
  #  Profesor:		Juan Carlos González Ibarra
- #  Institución:		Universidad Politécnica de San Luis Potosí
+ #  Institución:	Universidad Politécnica de San Luis Potosí
  #  Matrícula:		180024
  #
  #  Descripción:	Programa que muestra las tablas de verdad de los
- #				operadores lógicos OR, AND, NOT y  ^.
+ #			operadores lógicos OR, AND, NOT y  ^.
  #
  #****************************************************************************
 
@@ -30,12 +30,12 @@ my $y;	# |  los valores booleanos
 #%#%
 #  Función booleana
 sub boolean {				# |
-	my $variable = $_[0];	# |  Debido a que True y False se representa
-						# |  con ceros y unos en Perl, se crea una
+	my $variable = $_[0];		# |  Debido a que True y False se representa
+					# |  con ceros y unos en Perl, se crea una
 	if ($variable == 1) {		# |  función que imprime "True" si la variable
 		print "True";		# |  vale 1, pero si esta variable vale 0, se 
-	} else { print "False"}	# |  imprime "False".
-}						# |  
+	} else { print "False"}		# |  imprime "False".
+}					# |  
 
 #%#%
 #  Tabla OR
@@ -77,7 +77,7 @@ say "\nx\tNOT x";
 say "-" x 13;
 
 for $x ( @booleanos ) {
-	&boolean ($x);		# |  Valor de x
+	&boolean ($x);			# |  Valor de x
 	print "\t";
 	&boolean (not $x);		# |  Valor de (not x)
 	say "";
