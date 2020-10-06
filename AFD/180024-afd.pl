@@ -8,7 +8,7 @@
  #  Matrícula:		180024
  #
  #  Descripción:	Programa que recrea el funcionamiento de un
- #				autómata finito determinista (AFD)
+ #			autómata finito determinista (AFD)
  #
  #****************************************************************************
 
@@ -16,22 +16,23 @@ use strict;
 use warnings;
 use feature "say";        		# |  Característica de Perl que imprime un salto de línea automático
 
-use vars qw ( $simbolo );	# |  Variable globales
-use vars qw ( $fin );		# |  Variable globales
+use vars qw ( $simbolo );		# |  Variable global
+use vars qw ( $fin );			# |  Variable global
 
-$simbolo = undef;
-$fin = undef;
+$simbolo = undef;			# | Se inicializa sin un valor
+$fin = undef;				# | Se inicializa sin un valor
 
 sub caracter {
-	my ( $character ) = @_;
+	my ( $character ) = @_;		# |  Paso del parámetro
 	
-	$simbolo = "";
+	$simbolo = "";			# |  Las variables globales están vacías
 	$fin = "";
 	
-	if ($character =~ /^\d+$/) {			# |  El comando \d reconoce los dígitos
+	if ($character =~ /^\d+$/) {		# |  El comando \d reconoce los dígitos
 		$simbolo = " Digito ";
 		return 0;
 	} else {
+		# |  Se validan los operadores permitidos (+, -, *, /)
 		if ( $character =~ /\+|\-/ or $character eq "*" or $character eq "/") {
 			$simbolo = "Operador";
 			return 1;
@@ -66,7 +67,7 @@ sub cuerpo {
 
 #  MAIN
 #  Este es la tabla de transiciones del automata AFD creado
-my @tabla= ([1,"E","E"],["E",2,"E"],[3,"E","E"],["E","E","A"]);		# |  Toma los valores del return
+my @tabla= ([1,"E","E"],["E",2,"E"],[3,"E","E"],["E","E","A"]);	# |  Toma los valores del return
 my $estado = 0;
 
 say ("+-------------------------------------+");
@@ -74,8 +75,8 @@ say ("|    Ingrese una cadena a evaluar:    |");
 say ("+-------------------------------------+");
 	
 my $cadena = <STDIN>;			# |  Captura de la cadena por teclado
-chomp $cadena;					# |  Se elimina la reserva el símbolo de \n
-my @cadena = split (//, $cadena);		# |  La cadena se convierte en un arreglo
+chomp $cadena;				# |  Se elimina la reserva del símbolo de \n
+my @cadena = split (//, $cadena);	# |  La cadena se convierte en un arreglo
 
 &cuerpo;
 &encabezado;
@@ -111,5 +112,6 @@ if ( $estado != 3 ) {
 if ( $estado == 3 ) {
     say ("|     ",$estado,"      |         |Fin cadena |               |");
     &cuerpo;
-    say ("|                Cadena valida                       |\n+----------------------------------------------------+");
+    say ("|                Cadena valida                       |");
+    say ("+----------------------------------------------------+");
 }
