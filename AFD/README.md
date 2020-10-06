@@ -14,7 +14,7 @@ Se valida una entrada similar a 1+2, reconociendo patrones en la cadena ingresad
 La siguiente tabla ilustra las transiciones que debe de realizar este autómata:  
 
 | Estado | Dígitos | Operadores | Fin de cadena |
-| --- | :---: | :---: |  :---: |
+| :---: | :---: | :---: |  :---: |
 | q<sub>0</sub> | q<sub>1</sub> | Error |  Error |
 | q<sub>1</sub> | Error | q<sub>2</sub> | Error |
 | q<sub>2</sub> | q<sub>f</sub> | Error | Error |
@@ -26,9 +26,10 @@ En Perl, es posible utilizar los comandos para expresiones regulares que el prop
     
     "Hello World" =~ /World/;		# |  Se encuentra el patrón en la cadena  
 
-Además, se tuvieron que inicializar las valiables globales como `undef`, es decir, no se le asigna un valor a una variable.
 
 #### Declaración de variables globales
+Se tuvieron que inicializar las valiables globales como `undef`, es decir, no se le asigna un valor a una variable.  
+    
     use vars qw ( $simbolo );
     use vars qw ( $fin );
     
