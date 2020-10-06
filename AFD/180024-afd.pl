@@ -28,7 +28,7 @@ sub caracter {
 	$simbolo = "";			# |  Las variables globales están vacías
 	$fin = "";
 	
-	if ($character =~ /^\d+$/) {		# |  El comando \d reconoce los dígitos
+	if ($character =~ /\d+$/) {		# |  El comando \d reconoce los dígitos
 		$simbolo = " Digito ";
 		return 0;
 	} else {
