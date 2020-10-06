@@ -8,25 +8,36 @@
 
 
 ## Descripción
-Programa que recrea el funcionamiento de un Autómata Finito Determinista (AFD), en particular el reconocimiento de cadenas. Se valida un entrada similar a 1+2, reconociendo  
-patrones en la cadena ingresada para determinar si esta es válida o inválida.  
+Programa que recrea el funcionamiento de un Autómata Finito Determinista (AFD), en particular el reconocimiento de cadenas.  
+Se valida una entrada similar a 1+2, reconociendo patrones en la cadena ingresada para determinar si esta es válida o no.  
+
+La siguiente tabla ilustra las transiciones que debe de realizar este autómata:  
+
+| Estado | Digitos | Operadores | Fin de cadena |
+| --- | ---: | :---: |  :---: |
+| q0 | q1 | Error |  Error |
+| q1 | Error | q2 | Error |
+| q2 | qf | Error | Error |
+| qf | error | Error | Aceptacion |
 
 
 ## Sintaxis
-En Perl, es posible utilizar los comandos para expresiones regulares que el propio lenguaje ya tiene por defecto. Entre estas expresiones se encuentra "=~":
+En Perl, es posible utilizar los comandos para expresiones regulares que el propio lenguaje ya tiene por defecto. Entre estas expresiones se encuentra `=~`:  
+    
     "Hello World" =~ /World/;		# |  Se encuentra el patrón en la cadena  
 
-Además, se tuvieron que inicializar las valiables globales como "undef", es decir, no se le asigna un valor a una variable.
+Además, se tuvieron que inicializar las valiables globales como `undef`, es decir, no se le asigna un valor a una variable.
 
 #### Declaración de variables globales
     use vars qw ( $simbolo );
     use vars qw ( $fin );
+    
     $simbolo = undef;
     $fin = undef;
 De esta manera, las variables globales inician sin un valor asignado al iniciar el programa.
 
 #### Comandos
-    $character =~ /\d+$/					# |  Reconoce si hay un dígito en la cadena
+    $character =~ /\d+$/						# |  Reconoce si hay un dígito en la cadena
     
     $character =~ /\+|\-/ or $character eq "*" or $character eq "/"	# |  Reconoce si hay un operador en la cadena
 
@@ -66,13 +77,12 @@ if ( $estado != 3 ) {
 if ( $estado == 3 ) {
     say ("|     ",$estado,"      |         |Fin cadena |               |");
     &cuerpo;
-    say ("|                Cadena valida                       |\n+----------------------------------------------------+");
+    say ("|                Cadena valida                       |");
+    say ("+----------------------------------------------------+");
 }
 ```
 
 
 ## Problemas y soluciones al programar  
-Al momento de tratar de encontrar un patrón que reconociera los dígitos en la cadena, el programa no diferencía letras de números, por lo que si se ingresaba la  
-cadena e+4 se tomaba como válida. Incluso se llegó a implementar el módulo *Regexp::Common* y el *Scalar::Util qw(looks_like_number)*, pero seguía sin  
-distinguir letras de números.  
-Debido a esto, se optó por utilizar `$character =~ /\d+$/`, donde `/\d/` en teoría reconoce los números.  
+Al momento de tratar de encontrar un patrón que reconociera los dígitos en la cadena, el programa no diferencía letras de números, por lo que si se ingresaba la cadena e+4 se tomaba como válida. Incluso se llegó a implementar el módulo *Regexp::Common* y el *Scalar::Util qw(looks_like_number)*, pero seguía sin distinguir letras de números.  
+Debido a esto, se optó por utilizar `$character =~ /\d+$/`, donde `/\d/` en teoría reconoce los números.
