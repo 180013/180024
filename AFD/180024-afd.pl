@@ -28,7 +28,7 @@ sub caracter {
 	$simbolo = "";			# |  Las variables globales están vacías
 	$fin = "";
 	
-	if ($character =~ /\d+$/) {		# |  El comando \d reconoce los dígitos
+	if ($character =~ /\d+$/) {	# |  El comando \d reconoce los dígitos
 		$simbolo = " Digito ";
 		return 0;
 	} else {
@@ -41,8 +41,8 @@ sub caracter {
 				return 2;
 			}
 		}
-		#say ( "El caracter $character no es valido\n" );
-		#exit ();
+		say ( "El caracter $character no es valido\n" );
+		exit ();
 		
 	}	
 }
@@ -56,7 +56,7 @@ sub encabezado {
 #  Función que guarda cada valor despues de encontrarlo en un ciclo
 sub contenido {
 	my ( $estadosig, $character, $simbolo, $estado ) = @_;
-	say ("|     ",$estadosig,"      |  ",$character,"    |",$simbolo," |     ",$estado,"       |");
+	say ("|       ",$estadosig,"      |    ",$character,"    | ",$simbolo,"  |       ",$estado,"       |");
 	&cuerpo;
 }
 
@@ -93,7 +93,7 @@ for my $character (@cadena) {
 	
 	#  Si el valor obtenido es una E, imprimimos "Cadena no válida"
 	if ($estado eq "E") {
-		say ("|     ",$estadosig,"      |  ",$character,"    |",$simbolo," |     ",$estado,"       |");
+		say ("|       ",$estadosig,"      |    ",$character,"    | ",$simbolo,"  |       ",$estado,"       |");
 		&cuerpo;
 		say "|              Cadena no valida :(                   |";
 		say ("+----------------------------------------------------+");
@@ -110,8 +110,8 @@ if ( $estado != 3 ) {
 
 #  Si el estado es 3, entonces es una cadena de aceptación
 if ( $estado == 3 ) {
-    say ("|     ",$estado,"      |         |Fin cadena |               |");
-    &cuerpo;
-    say ("|                Cadena valida                       |");
-    say ("+----------------------------------------------------+");
+	say ("|       ",$estado,"      |         | Fin cadena|               |");
+	&cuerpo;
+	say ("|                Cadena valida                       |");
+	say ("+----------------------------------------------------+");
 }
