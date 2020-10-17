@@ -10,15 +10,14 @@
 
 ## Descripción
 Programa que recrea el funcionamiento de un Autómata Finito No Determinístico (AFN), en particular el reconocimiento de cadenas.  
-Se valida la expresión regular a*ba*; para entender este concepto, es necesario explicar el significado del asterisco dentro de esta expresión.  
+Se valida la expresión regular a *ba*; para entender este concepto, es necesario explicar el significado del asterisco dentro de esta expresión.  
 
 > En informática, el asterisco se emplea habitualmente como una expresión regular para denotar cero o más repeticiones de un patrón.
 
-En otras palabras, la letra "a" se repite cero, una o infinidad de veces, mientras que la letra "b" solamente puede aparecer una vez en toda la  
-cadena, siempre rodeada de a*.
+En otras palabras, la letra "a" se repite cero, una o infinidad de veces, mientras que la letra "b" solamente puede aparecer una vez en toda la cadena, siempre rodeada de a*.
 
-El autómata que recrea el comportamiento de la expresión regular a*ba* es el siguiente:
-<img src="images/automata.png">
+El autómata que recrea el comportamiento de la expresión regular a* ba* es el siguiente:
+<img src="images/automata.JPG">
 
 La siguiente tabla ilustra las transiciones que debe de realizar este autómata:  
 
@@ -55,13 +54,13 @@ En Perl, es posible utilizar los comandos para expresiones regulares que el prop
 ```
 #  Esta es la tabla de transiciones del automata AFN creado
 #	       a | b | Vacío
-my @tabla = ( [1, 5, 20],		# |  q0
-		[2, 5, 20],		# |  q1
-		[3, 5, 20],		# |  q2
-		[4, 5, 20],		# |  q3
-		[1, 5, 20],		# |  q4
+my @tabla =  (  [1, 5, 20],	# |  q0
+		[2, 5, 20],	# |  q1
+		[3, 5, 20],	# |  q2
+		[4, 5, 20],	# |  q3
+		[1, 5, 20],	# |  q4
 		[6, 20, 21],	# |  q5
-		[7, 20, 21],		# |  q6
+		[7, 20, 21],	# |  q6
 		[8, 20, 21],	# |  q7
 		[9, 20, 21],	# |  q8
 		[10, 20, 21],	# |  q9
@@ -71,14 +70,12 @@ my @tabla = ( [1, 5, 20],		# |  q0
 
 
 ## Problemas y soluciones al programar  
-La generación de la tabla de transiciones se realizó a partir del modelo proporcionado por nuestro profesor. Debido a que sería muy difícil utilizar caracteres  
-para validar estas transiciones, se optó por utilizar números, otorgándole uno distinto para cada estado válido o inválido.
+La generación de la tabla de transiciones se realizó a partir del modelo proporcionado por nuestro profesor. Debido a que sería muy difícil utilizar caracteres para validar estas transiciones, se optó por utilizar números, otorgándole uno distinto para cada estado válido o inválido.
 
-De igual manera, el programa termina cuando se detecta un espacio en blanco, pero las cadenas en Perl agregan un salto de línea automáticamente,  
-obstruyendo esta instrucción. Para corregir este problema, se utilizó la función `chomp()`, la cual elimina la reserva el símbolo de \n.
+De igual manera, el programa termina cuando se detecta un espacio en blanco, pero las cadenas en Perl agregan un salto de línea automáticamente, obstruyendo esta instrucción. Para corregir este problema, se utilizó la función `chomp()`, la cual elimina la reserva el símbolo de \n.
 ```
-my $caden = <STDIN>;		# |  Captura de la cadena por teclado
-chomp $caden;			# |  Se le quita el salto de línea
+my $caden = <STDIN>;			# |  Captura de la cadena por teclado
+chomp $caden;				# |  Se le quita el salto de línea
 my $cadena = $caden . " ";		# |  Se le concatena un espacio vacío al final
 my @cadena = split (//, $cadena);	# |  La cadena se convierte en un arreglo
 ```
