@@ -20,14 +20,14 @@ use feature "say";        		# |  Característica de Perl que imprime un salto de
 use vars qw ( $simbolo );		# |  Variable global
 use vars qw ( $fin );			# |  Variable global
 
-$simbolo = " ";			# | Se inicializa sin un valor
-$fin = " ";				# | Se inicializa sin un valor
+$simbolo = " ";				# |  Se inicializa con un espacio vacío
+$fin = " ";				# |  Se inicializa con un espacio vacío
 
 sub caracter {
 	my ( $character ) = @_;		# |  Paso del parámetro
 	
 	$simbolo = " ";			# |  Las variables globales se conforman
-	$fin = " ";					# |  por un espacio en blanco
+	$fin = " ";			# |  por un espacio en blanco
 	
 	#  Valida que el caracter sea una a
 	if ( $character =~ m[a] ) {
@@ -70,19 +70,19 @@ sub cuerpo {
 
 #  MAIN
 #  Esta es la tabla de transiciones del automata AFN creado
-#			a | b | Vacío
-my @tabla = ( [1, 5, 20],		# |  q0
-			[2, 5, 20],		# |  q1
-			[3, 5, 20],		# |  q2
-			[4, 5, 20],		# |  q3
-			[1, 5, 20],		# |  q4
-			[6, 20, 21],	# |  q5
-			[7, 20, 21],	# |  q6
-			[8, 20, 21],	# |  q7
-			[9, 20, 21],	# |  q8
-			[10, 20, 21],	# |  q9
-			[11, 20, 21],	# |  q10
-			[7, 20, 21] );	# |  q11
+#		a | b | Vacío
+my @tabla = ( 	[1, 5, 20],	# |  q0
+		[2, 5, 20],	# |  q1
+		[3, 5, 20],	# |  q2
+		[4, 5, 20],	# |  q3
+		[1, 5, 20],	# |  q4
+		[6, 20, 21],	# |  q5
+		[7, 20, 21],	# |  q6
+		[8, 20, 21],	# |  q7
+		[9, 20, 21],	# |  q8
+		[10, 20, 21],	# |  q9
+		[11, 20, 21],	# |  q10
+		[7, 20, 21] );	# |  q11
 my $estado = 0;
 
 say ("+-------------------------------------+");
