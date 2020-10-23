@@ -16,9 +16,9 @@ use strict;
 use warnings;
 use feature "say";
 
-my @tokens = ();                          # |  Lista vacía
-my $cadena = 'int result = 100;';         # |  Se declara una cadena
-my @source_code = split ( ' ', $cadena );	# |  Se convierte la cadena en una lista de palabras
+my @tokens = ();                           # |  Lista vacía
+my $cadena = 'int result = 100;';          # |  Se declara una cadena
+my @source_code = split ( ' ', $cadena );  # |  Se convierte la cadena en una lista de palabras
 my $word;
 
 #  Se recorre cada palabra de source_code
