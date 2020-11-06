@@ -69,12 +69,12 @@ sub comprobarPalindromo {
     }
 }
 
-#  .: MAIN :.
+#  .: MAIN :.  #
 print "Ingrese la cadena a comprobar: ";
-my $cadena = <STDIN>;		       # |  Captura de la cadena por teclado
-chomp $cadena;				       # |  Se le quita el salto de línea
-say "\nLa cadena <$cadena> es un palindromo? "; # |  Se imprime la cadena original
-$cadena =~ s/\s//g;                                # |  Se quitan los espacios en blanco
-$cadena = uc( $cadena );                     # |  La cadena se pasa a mayúsculas
+my $cadena = <STDIN>;                             # |  Captura de la cadena por teclado
+chomp $cadena;                                    # |  Se le quita el salto de línea
+say "\nLa cadena <$cadena> es un palindromo? ";   # |  Se imprime la cadena original
+$cadena =~ s/\s//g;                               # |  Se quitan los espacios en blanco
+$cadena = uc( $cadena );                          # |  La cadena se pasa a mayúsculas
 
-&comprobarPalindromo ( $cadena );       # |  Se comprueba la cadena ingresada
+&comprobarPalindromo ( $cadena );                 # |  Se comprueba la cadena ingresada
