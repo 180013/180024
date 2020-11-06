@@ -21,13 +21,13 @@ Este programa utiliza la recursividad para comprobar si la palabra o frase ingre
 ## Sintaxis
 En los palíndromos solo importa su lectura tanto de derecha a izquierda como viceversa, por lo que los espacios en blanco son irrelevantes. Por esta razón y para poder comparar los caracteres, se optó por quitar los espacios en blanco de la cadena ingresada con la siguiente expresión regular:
   
-    $cadena =~ s/\s//g;	# |  Se remueven los espacios en blanco  
+    $cadena =~ s/\s//g;         # |  Se remueven los espacios en blanco  
 
 De igual manera, se convierten todas las letras a mayúsculas, para que no exista diferencia al momento de comparar. Esto se logra de la siguiente manera:
   
-    $cadena = uc( $cadena );	# |  La cadena se pasa a mayúsculas
+    $cadena = uc( $cadena );    # |  La cadena se pasa a mayúsculas
 
-#### Función esPalíndromo
+### Función esPalíndromo
 Para comprobar si una cadena puede leerse de igual manera de derecha a izquierda y viceversa, se tiene la función que se muestra a continuación:
 ```
 sub esPalindromo {
