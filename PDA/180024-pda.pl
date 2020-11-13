@@ -20,12 +20,12 @@ use feature "say";        		# |  Característica de Perl que imprime un salto de
 #  Variables globales
 use vars qw ( $simbolo );		# |  Define el símbolo actual
 use vars qw ( $fin );			# |  Marca el fin de cadena
-use vars qw ( @pila );		# |  Define la pila a utilizar
+use vars qw ( @pila );			# |  Define la pila a utilizar
 use vars qw ( $a );			# |  Contador de a
 use vars qw ( $b );			# |  Contador de b
 
-$a = 0;				# |  Se inicializa el contador de a con 0
-$b = 0;				# |  Se inicializa el contador de b con 0
+$a = 0;					# |  Se inicializa el contador de a con 0
+$b = 0;					# |  Se inicializa el contador de b con 0
 @pila = "";				# |  Se inicializa la pila
 
 #  Función que valida que solo se ingresen las letras a y b
@@ -91,7 +91,7 @@ say ("|    Ingrese una cadena a evaluar:    |");
 say ("+-------------------------------------+");
 my $cadena = <STDIN>;                             # |  Captura de la cadena por teclado
 chomp $cadena;                                    # |  Se le quita el salto de línea
-my @cadena = split (//, $cadena);	# |  La cadena se convierte en un arreglo
+my @cadena = split (//, $cadena);		# |  La cadena se convierte en un arreglo
 
 &cuerpo;
 &encabezado;
