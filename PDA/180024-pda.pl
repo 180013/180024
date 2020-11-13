@@ -89,8 +89,8 @@ say ("     .: Automata de Pila que \n     valida la expresion anbn :.");
 say ("+-------------------------------------+");
 say ("|    Ingrese una cadena a evaluar:    |");
 say ("+-------------------------------------+");
-my $cadena = <STDIN>;                             # |  Captura de la cadena por teclado
-chomp $cadena;                                    # |  Se le quita el salto de línea
+my $cadena = <STDIN>;				# |  Captura de la cadena por teclado
+chomp $cadena;					# |  Se le quita el salto de línea
 my @cadena = split (//, $cadena);		# |  La cadena se convierte en un arreglo
 
 &cuerpo;
