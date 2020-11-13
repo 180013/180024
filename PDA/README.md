@@ -36,7 +36,7 @@ En Perl, es posible utilizar los comandos para expresiones regulares que el prop
 #### Implementación de la pila
     push( @pila," x " );
     pop @pila;
-La función `pop` extrae el último elemento de un arreglo y lo elimina.
+La función `pop` extrae el último elemento de un arreglo y lo elimina.  
 La función `push`  agrega un elemento o una lista de elementos al final de un arreglo.
 
 
