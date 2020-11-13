@@ -10,6 +10,7 @@
  #  Descripción:	Programa que recrea el comportamiento de un
  #			autómata de pila (PDA) con la expresión anbn
  #
+ #  En colaboración con Diana Rodríguez Espiricueta (170010) 
  #****************************************************************************
 
 use strict;                     
@@ -17,14 +18,14 @@ use warnings;
 use feature "say";        		# |  Característica de Perl que imprime un salto de línea automático
 
 #  Variables globales
-use vars qw ( $simbolo );		#  Define el símbolo actual
-use vars qw ( $fin );			#  Marca el fin de cadena
-use vars qw ( @pila );			#  Define la pila a utilizar
-use vars qw ( $a );			#  Contador de a
-use vars qw ( $b );			#  Contador de b
+use vars qw ( $simbolo );		# |  Define el símbolo actual
+use vars qw ( $fin );			# |  Marca el fin de cadena
+use vars qw ( @pila );		# |  Define la pila a utilizar
+use vars qw ( $a );			# |  Contador de a
+use vars qw ( $b );			# |  Contador de b
 
-$a = 0;
-$b = 0;
+$a = 0;				# |  Se inicializa el contador de a con 0
+$b = 0;				# |  Se inicializa el contador de b con 0
 @pila = "";				# |  Se inicializa la pila
 
 #  Función que valida que solo se ingresen las letras a y b
@@ -95,8 +96,8 @@ my @cadena = split (//, $cadena);	# |  La cadena se convierte en un arreglo
 &cuerpo;
 &encabezado;
 
-my $charcaracter = 0;	#  Se inicializa la variable para validar los caracteres ingresados
-my $bandera = 0;		#  Valida que empiece a vaciarse la pila
+my $charcaracter = 0;		# |  Se inicializa la variable para validar los caracteres ingresados
+my $bandera = 0;		# |  Valida que empiece a vaciarse la pila
 
 #  Ciclo para recorrer la cadena
 for my $character (@cadena) {
