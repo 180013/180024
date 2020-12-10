@@ -8,7 +8,7 @@
 7. The evidence of the developed program is the template of the commented source code.
 8. You can also show the operation of the programs in the beginning or term of class before the deadline.
 
-## Rubric
+## Rubric 
 ---
 #### Functionality:
 The program works correctly and all the input variables are validated.
